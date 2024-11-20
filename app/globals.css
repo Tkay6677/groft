@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.range{
+    --range-shdw: #ef4444;
+}
+
+.checkbox:checked, .checkbox[checked="true"], .checkbox[aria-checked="true"] {
+    background-repeat: no-repeat;
+    animation: checkmark var(--animation-input, 0.2s) ease-out;
+    background-color: #ef4444;
+    background-image: linear-gradient(-45deg, transparent 65%, #ef4444 65.99%),
+      linear-gradient(45deg, transparent 75%, #ef4444 75.99%),
+      linear-gradient(-45deg, #ef4444 40%, transparent 40.99%),
+      linear-gradient(
+        45deg,
+        #ef4444 30%,
+        white 30.99%,
+        white 40%,
+        transparent 40.99%
+      ),
+      linear-gradient(-45deg, white 50%, #ef4444 50.99%);
+}
+
+/* Define the keyframes for infinite scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0); /* Start from the initial position */
+  }
+  100% {
+    transform: translateX(-50%); /* Move by half the container width */
+  }
+}
+
+/* Animation class for continuous scrolling */
+.animate-scroll {
+  display: inline-flex;
+  animation: scroll 40s linear infinite; /* Duration and smoothness of the scroll */
+  will-change: transform; /* Optimizes performance for scroll + animation */
+  scroll-behavior: smooth; /* Ensure smooth scrolling when the user manually scrolls */
+}
+
+/* Add smooth scrolling */
